@@ -1,0 +1,387 @@
+.header_area {
+
+    .header_top_row {
+
+        .header_top_clm {
+
+            background: var(--green-500);
+            color: white;
+            font-size: 1.2rem;
+            text-transform: capitalize;
+            display: flex;
+            align-items: center;
+            padding: 5px 0;
+
+            marquee {}
+
+        }
+    }
+
+    .header_bottom_row {
+        .header_bottom_clm {
+            .navbar {
+                background-color: var(--aliceblue-solid);
+
+                .container-fluid {
+                    padding-left: 0;
+                    padding-right: 0;
+
+                    .menu {
+                        .navbar-nav {
+                            width: 100%;
+                            justify-content: space-evenly;
+
+                            .nav-item {
+                                .nav-link {
+                                    padding-right: .5rem;
+                                    padding-left: .5rem;
+                                    color: var(--green-400);
+                                    text-transform: capitalize;
+                                    font-size: 1rem;
+                                    transition: 0.3s;
+
+                                    &:hover {
+                                        color: var(--green-700);
+                                    }
+
+                                }
+
+                                .dropdown-menu {
+                                    background-color: var(--aliceblue-solid);
+
+
+                                    li {
+                                        .dropdown-item {
+                                            color: var(--green-400);
+                                            transition: 0.3s;
+                                            text-transform: capitalize;
+
+                                            &:hover {
+                                                color: var(--green-700);
+                                                background: 0;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+
+            }
+        }
+    }
+}
+
+/*----------responsive_area----------------*/
+// `xxl` applies to x-large devices (large desktops, less than 1400px)
+@media (min-width: 1400px) {
+    .header_area {
+        .header_row {
+            .header_top_clm {
+                .marquee_area {
+                    marquee {}
+                }
+            }
+
+            .header_bottom_clm {
+                .navbar {
+                    .container-fluid {
+                        .menu {
+                            .navbar-nav {
+                                .nav-item {
+                                    .nav-link {
+                                        &:hover {}
+                                    }
+
+                                    .dropdown-menu {
+
+                                        li {
+
+                                            .dropdown-item {}
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+// `xxl` applies to x-large devices (large desktops, less than 1399px)
+@media (max-width: 1399px) {}
+
+// `xl` applies to large devices (desktops, less than 1200px)
+@media (max-width: 1200px) {
+    .header_area {
+        .header_top_row {
+            .header_top_clm {
+                font-size: calc(7px + 1vw);
+
+                marquee {}
+
+            }
+
+        }
+
+        .header_bottom_row {
+
+            .header_bottom_clm {
+
+                .navbar {
+
+                    .container-fluid {
+                        .menu {
+                            .navbar-nav {
+
+
+                                .nav-item {
+
+
+                                    .nav-link {
+                                        font-size: calc(6px + 1vh);
+
+                                        &:hover {}
+
+                                    }
+
+                                    .dropdown-menu {
+
+
+                                        li {
+                                            width: 100%;
+                                            display: block;
+
+                                            .dropdown-item {
+                                                font-size: calc(0.5rem + 1vw);
+
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+// `xl` applies to large devices (desktops, less than 1024px)
+@media (max-width: 1024px) {
+    .header_area {
+        .header_row {
+            .header_top_clm {
+                .marquee_area {
+                    marquee {}
+                }
+            }
+
+            .header_bottom_clm {
+                .navbar {
+                    .container-fluid {
+                        .menu {
+                            .navbar-nav {
+                                .nav-item {
+                                    .nav-link {
+
+                                        &:hover {}
+                                    }
+
+                                    .dropdown-menu {
+
+                                        li {
+
+                                            .dropdown-item {}
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+// `lg` applies to medium devices (tablets, less than 992px)
+@media (max-width: 991px) {
+    .header_area {
+        .header_top_row {
+            .header_top_clm {
+                font-size: calc(7px + 1vw);
+
+                marquee {}
+
+            }
+
+        }
+
+        .header_bottom_row {
+
+            .header_bottom_clm {
+                .navbarShow {
+                    background-color: var(--green-500) !important;
+                    padding-left: 0;
+                    padding-right: 0;
+                    padding: 15px 10px;
+                    width: 100%;
+                    display: block;
+                }
+
+                .navbar {
+                    background: transparent;
+                    display: inline-flex;
+                    position: fixed;
+                    width: 100%;
+                    left: 0;
+                    top: 0;
+                    z-index: 999;
+                    align-items: flex-start;
+
+                    .overBG {
+                        position: fixed;
+                        width: 100%;
+                        height: 100vh;
+                        top: 0;
+                        background: rgb(0 0 0 / 45%);
+                        left: 0;
+                        z-index: -1;
+                        opacity: 0;
+                        display: none;
+                        visibility: hidden;
+                    }
+
+                    .overBGShow {
+                        visibility: visible !important;
+                        opacity: 1 !important;
+                        display: block !important;
+                    }
+
+                    .container-fluid {
+                        button {
+                            box-shadow: none;
+                            background: var(--green-500);
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            padding: 10px;
+                            border-radius: 3px;
+                            margin-left: 10px;
+
+                            .navbar-toggler-icon {
+                                width: 0;
+                                height: 0;
+                            }
+                        }
+
+                        .menu {
+                            .navbar-nav {
+                                flex-direction: column;
+                                flex-wrap: wrap;
+
+                                .nav-item {
+                                    display: block;
+
+                                    .nav-link {
+                                        font-size: calc(6px + 1vh);
+
+                                        &:hover {}
+
+                                    }
+
+                                    .dropdown-menu {
+                                        width: auto;
+                                        margin-left: 25px;
+                                        background: transparent;
+                                        border: 0;
+
+                                        li {
+                                            width: 100%;
+                                            display: block;
+
+                                            .dropdown-item {
+                                                font-size: calc(0.5rem + 1vw);
+
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+// `md` applies to small devices (landscape phones, less than 768px)
+@media (max-width: 768px) {
+    .header_area {
+        .header_top_row {
+            .header_top_clm {
+                font-size: calc(7px + 1vw);
+
+                marquee {}
+
+            }
+
+        }
+
+        .header_bottom_row {
+
+            .header_bottom_clm {
+                .navbar {
+                    .container-fluid {
+                        button {
+                            box-shadow: none;
+                        }
+
+                        .menu {
+                            .navbar-nav {
+
+                                .nav-item {
+                                    .nav-link {
+                                        font-size: calc(0.5rem + 1vw);
+
+                                        &:hover {}
+
+                                    }
+
+                                    .dropdown-menu {
+
+                                        li {
+
+                                            .dropdown-item {
+                                                font-size: calc(0.5rem + 1vw);
+
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+// `sm` applies to x-small devices (portrait phones, less than 576px)
+@media (max-width: 576px) {}
+
+// `sm` applies to x-small devices ( less than 320px)
+@media (max-width: 320px) {}

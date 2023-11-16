@@ -1,0 +1,1218 @@
+.content_area {
+
+    @mixin afterbefore {
+        &:hover {
+            color: var(--green-500);
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            left: 0;
+            bottom: 0;
+            border-bottom: 1px solid var(--green-500);
+            opacity: -1;
+            transition: 0.3s cubic-bezier(0, 0.29, 0.99, 0.51);
+        }
+
+        &:hover::after {
+            width: 100%;
+            opacity: 1;
+        }
+    }
+
+
+    .contents_top_row {
+        border: 1px solid var(--gray-200);
+        padding: 10px;
+
+        .contents_top_clm {
+            grid-template-columns: repeat(2, auto);
+
+            .content_left_clm {
+                padding: 0 5px;
+                flex-direction: column;
+
+                h4 {
+                    padding: 10px 0;
+                }
+
+                .top_row {
+                    border: 1px solid var(--gray-200);
+                    border-radius: 3px;
+                    padding: 10px;
+
+                    .top_row_clm {
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+
+
+                .middle_row {
+                    position: relative;
+                    height: 26rem;
+                    border: 1px solid var(--gray-200);
+                    padding: 5px 0;
+                    height: auto;
+
+                    .middle_row_clm {
+
+                        p {
+                            background-color: var(--teal-solid);
+                            padding: 5px;
+                            color: var(--white-solid);
+                            font-size: 18px;
+                            text-align: center;
+                        }
+
+                        img {
+                            position: absolute;
+                            top: 42px;
+                            width: 60px;
+                        }
+
+                        .notice_board_ul {
+                            padding: 5px;
+                            display: flex;
+                            list-style: none;
+                            width: auto;
+                            height: auto;
+                            overflow: scroll;
+                            flex-direction: column;
+                            justify-content: flex-start;
+
+                            li {
+                                a {}
+                            }
+                        }
+
+                        #submit {
+                            position: absolute;
+                            right: 3px;
+                            bottom: 3px;
+                            border: 0;
+                            padding: 5px 15px;
+                            font-size: 16px;
+                            text-transform: capitalize;
+                            background-color: var(--green-500);
+                            color: var(--white-solid);
+                            border-radius: 5px;
+                            transition: 0.3s;
+
+                            &:hover {
+                                background-color: orange;
+                            }
+                        }
+                    }
+
+                }
+
+                .bottom_row {
+                    padding: 10px 0;
+
+                    .bottom_row_clm {
+                        grid-template-columns: repeat(1, auto);
+                        grid-gap: 15px;
+
+                        .card_row {
+                            display: grid;
+                            grid-template-columns: repeat(2, 1fr);
+                            grid-gap: 15px;
+
+                            .single_card_clm {
+                                height: 15rem;
+                                border: 1px solid var(--gray-200);
+                                box-shadow: 0 0px 5px rgb(0 0 0/ 5%);
+                                transition: all 0.3s;
+                                cursor: pointer;
+
+                                &:hover {
+                                    transform: scale(1.04);
+                                    box-shadow: 0 0px 5px rgb(0 0 0/60%);
+
+                                }
+
+                                .h4 {
+                                    text-align: center;
+                                    background-color: var(--green-500);
+                                    color: var(--white-solid);
+                                    font-size: 18px;
+                                }
+
+
+
+                                .card_info {
+                                    display: flex;
+                                    align-items: center;
+                                    padding: 0 10px;
+
+                                    img {
+                                        width: 65px;
+                                    }
+
+                                    ul {
+                                        margin-left: 15px;
+
+                                        li {
+                                            padding-top: 5px;
+
+                                            .i {
+                                                color: var(--green-500);
+                                            }
+
+                                            a {
+                                                @include afterbefore;
+                                                margin-left: 5px;
+                                                font-size: 14px;
+                                                position: relative;
+                                                color: var(--black-solid);
+                                            }
+                                        }
+                                    }
+                                }
+
+                            }
+
+                        }
+                    }
+                }
+
+                .bottom_row_video_area {
+                    .contents_bottom_clm {
+                        video {
+                            width: 250px;
+                            height: 250px;
+                        }
+                    }
+                }
+
+
+            }
+
+            .content_right_clm {
+                border-radius: 3px;
+
+                .ministers {
+                    grid-template-columns: repeat(1, auto);
+                    padding: 0 5px;
+                    grid-gap: 15px;
+
+                    .single_mnstr {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding: 5px;
+                        border: 1px solid var(--gray-200);
+                        overflow: hidden;
+                        width: 350px;
+                        height: 350px;
+
+                        h3 {
+                            width: 100%;
+                            text-align: center;
+                            font-size: 16px;
+                            background-color: var(--green-500);
+                            color: var(--white-solid);
+                            padding: 10px 0;
+                        }
+
+                        img {
+                            margin: 5px 0;
+                            width: 60%;
+                            height: 100%;
+                        }
+
+                        a {
+                            color: var(--black-solid);
+                            transition: 0.3s;
+
+                            &:hover {
+                                color: var(--green-500);
+                            }
+                        }
+
+                        &:first-child {
+                            margin-top: 0;
+                        }
+                    }
+
+                    .imp_link {
+                        justify-content: start;
+                        height: auto;
+
+                        .imp_link_ul {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-evenly;
+                            height: 100%;
+                            padding: 10px 0;
+
+                            li {
+                                padding-top: 10px;
+
+                                .i {
+                                    color: var(--green-500);
+                                }
+
+                                a {
+                                    position: relative;
+                                    margin-left: 5px;
+                                    color: var(--green-500);
+                                    @include afterbefore;
+                                }
+
+                            }
+                        }
+                    }
+
+                    .emergancy_service {
+                        height: 100%;
+                        justify-content: start;
+
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .contents_bottom_row {
+        .contents_bottom_clm {
+            video {}
+        }
+    }
+
+
+}
+
+/*----------responsive_area----------------*/
+// `xxl` applies to x-large devices (large desktops, less than 1400px)
+@media (min-width: 1400px) {
+    .content_area {
+
+        .contents_top_row {
+            padding: 0;
+
+            .contents_top_clm {
+                margin-top: 10px;
+                width: 100%;
+                grid-template-columns: repeat(2, auto);
+
+                .content_left_clm {
+
+                    .top_row {
+                        padding: 3px;
+
+                        .top_row_clm {
+
+                            img {}
+                        }
+                    }
+
+                    .middle_row {
+
+                        .middle_row_clm {
+
+                            p {
+                                font-size: calc(6px + 1vh);
+                            }
+
+                            img {
+                                top: 34px;
+                                width: 15%;
+                            }
+
+                            .notice_board_ul {
+                                margin-top: 120px;
+                                margin-left: 70px;
+
+                                a {}
+                            }
+
+
+                            #submit {}
+                        }
+                    }
+
+                    .bottom_row {
+                        .bottom_row_clm {
+                            .card_row {
+                                grid-template-columns: repeat(2, 1fr);
+
+                                .single_card_clm {
+                                    width: 100%;
+                                    display: flex;
+                                    height: 15rem;
+                                    flex-direction: column;
+
+                                    &:hover {
+                                        transform: scale(1.02);
+                                    }
+
+                                    h4 {}
+
+                                    .card_info {
+                                        display: flex;
+                                        flex-direction: row;
+                                        height: 100%;
+                                        justify-content: left;
+                                        align-items: center;
+
+                                        img {}
+
+                                        ul {
+                                            margin-left: 1rem;
+
+                                            li {
+
+                                                .i {}
+
+                                                a {
+                                                    font-size: 14px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .bottom_row_video_area {
+                        .contents_bottom_clm {
+                            video {}
+                        }
+                    }
+                }
+
+                .content_right_clm {
+
+                    .ministers {
+                        grid-template-columns: repeat(1, 1fr);
+                        justify-items: center;
+
+                        .single_mnstr {
+                            height: 18rem;
+                            width: 300px;
+
+                            h3 {}
+
+                            img {
+                                width: 45%;
+                            }
+
+                            a {
+                                font-size: 12px;
+                            }
+                        }
+
+                        .emergancy_service {
+                            height: 30rem !important;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .contents_bottom_row {
+            .contents_bottom_clm {
+                video {}
+            }
+
+        }
+    }
+}
+
+// `xl` applies to large devices (desktops, less than 1200px)
+@media (max-width: 1200px) {
+    .content_area {
+
+        .contents_top_row {
+            padding: 0;
+
+            .contents_top_clm {
+                margin-top: 10px;
+                width: 100%;
+                grid-template-columns: repeat(2, auto);
+
+                .content_left_clm {
+
+                    .top_row {
+                        padding: 3px;
+
+                        .top_row_clm {
+
+                            img {}
+                        }
+                    }
+
+                    .middle_row {
+
+                        .middle_row_clm {
+                            p {
+                                font-size: calc(6px + 1vh);
+                            }
+
+                            .notice_board_ul {
+
+                                a {
+                                    font-size: calc(6px + 1vh);
+                                }
+                            }
+
+
+                            #submit {
+                                font-size: calc(6px + 1vh);
+                            }
+                        }
+                    }
+
+                    .bottom_row {
+                        .bottom_row_clm {
+                            .card_row {
+                                grid-template-columns: repeat(2, 1fr);
+
+                                .single_card_clm {
+                                    width: 100%;
+                                    display: flex;
+                                    height: 15rem;
+                                    flex-direction: column;
+
+                                    &:hover {
+                                        transform: scale(1.02);
+                                    }
+
+                                    h4 {
+                                        font-size: calc(6px + 1vh) !important;
+                                    }
+
+                                    .card_info {
+                                        display: flex;
+                                        flex-direction: row;
+                                        height: 100%;
+                                        justify-content: left;
+                                        align-items: center;
+
+                                        img {}
+
+                                        ul {
+                                            margin-left: 1rem;
+
+                                            li {
+
+                                                .i {}
+
+                                                a {
+                                                    font-size: calc(6px + 1vh);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .bottom_row_video_area {
+                        .contents_bottom_clm {
+                            video {}
+                        }
+                    }
+                }
+
+                .content_right_clm {
+
+                    .ministers {
+                        grid-template-columns: repeat(1, 1fr);
+
+                        .single_mnstr {
+                            height: 18rem;
+                            width: 250px;
+
+                            h3 {
+                                font-size: calc(6px + 1vh);
+                            }
+
+                            img {
+                                width: 45%;
+                            }
+
+                            a {
+                                font-size: 12px;
+                            }
+                        }
+
+                        .emergancy_service {
+                            height: 30rem !important;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .contents_bottom_row {
+            .contents_bottom_clm {
+                video {}
+            }
+
+        }
+    }
+}
+
+// `xl` applies to large devices (desktops, less than 1024px)
+@media (max-width: 1024px) {
+    .content_area {
+
+        .contents_top_row {
+            padding: 0;
+
+            .contents_top_clm {
+                grid-template-columns: repeat(2, auto);
+
+                .content_left_clm {
+
+                    .top_row {
+
+
+                        .top_row_clm {
+
+                            img {}
+                        }
+                    }
+
+                    .middle_row {
+                        .middle_row_clm {
+                            p {}
+
+                            img {
+                                top: 32px;
+                            }
+
+                            .notice_board_ul {
+
+                                a {}
+                            }
+
+
+                            #submit {}
+                        }
+                    }
+
+                    .bottom_row {
+                        .bottom_row_clm {
+                            .card_row {
+                                grid-template-columns: repeat(1, auto);
+
+                                .single_card_clm {
+
+
+
+                                    h4 {}
+
+                                    .card_info {
+
+                                        img {}
+
+                                        ul {
+
+
+                                            li {
+
+                                                .i {}
+
+                                                a {}
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .bottom_row_video_area {
+                        .contents_bottom_clm {
+                            video {}
+                        }
+                    }
+                }
+
+                .content_right_clm {
+
+                    .ministers {
+                        grid-template-columns: repeat(1, 1fr);
+
+                        .single_mnstr {
+
+                            h3 {}
+
+                            img {}
+
+                            a {}
+                        }
+
+                        .emergancy_service {}
+                    }
+                }
+            }
+
+        }
+
+        .contents_bottom_row {
+            .contents_bottom_clm {
+                video {}
+            }
+
+        }
+    }
+}
+
+// `lg` applies to medium devices (tablets, less than 992px)
+@media (max-width: 992px) {
+    .content_area {
+
+        .contents_top_row {
+            padding: 0;
+
+            .contents_top_clm {
+                flex-direction: column;
+                width: 100%;
+                grid-template-columns: repeat(1, auto);
+
+                .content_left_clm {
+
+                    .top_row {
+                        padding: 3px;
+
+                        .top_row_clm {
+
+                            img {}
+                        }
+                    }
+
+
+                    .middle_row {
+
+                        .middle_row_clm {
+                            p {
+                                font-size: calc(6px + 1vh);
+                            }
+
+                            .notice_board_ul {
+                                margin-top: 70px;
+
+                                a {
+                                    font-size: calc(6px + 1vh);
+                                }
+                            }
+
+
+                            #submit {
+                                font-size: calc(6px + 1vh);
+                            }
+                        }
+                    }
+
+                    .bottom_row {
+                        .bottom_row_clm {
+                            .card_row {
+                                grid-template-columns: repeat(2, 1fr);
+
+                                .single_card_clm {
+                                    width: 100%;
+                                    display: flex;
+                                    height: 15rem;
+                                    flex-direction: column;
+
+                                    &:hover {
+                                        transform: scale(1.02);
+                                    }
+
+                                    h4 {
+                                        font-size: calc(6px + 1vh) !important;
+                                    }
+
+                                    .card_info {
+                                        display: flex;
+                                        flex-direction: row;
+                                        height: 100%;
+                                        justify-content: left;
+                                        align-items: center;
+
+                                        img {}
+
+                                        ul {
+                                            margin-left: 1rem;
+
+                                            li {
+                                                display: flex;
+
+                                                .i {}
+
+                                                a {
+                                                    font-size: calc(6px + 1vh);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .bottom_row_video_area {
+                        .contents_bottom_clm {
+                            video {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+
+                .content_right_clm {
+                    padding-top: 25px;
+
+                    .ministers {
+                        grid-template-columns: repeat(2, 1fr);
+
+                        .single_mnstr {
+                            height: auto;
+                            width: 100%;
+
+                            h3 {
+                                font-size: calc(6px + 1vh);
+                            }
+
+                            img {
+                                width: 45%;
+                            }
+
+                            a {
+                                font-size: calc(6px + 1vh);
+                            }
+                        }
+
+                        .emergancy_service {
+                            height: 30rem !important;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .contents_bottom_row {
+            .contents_bottom_clm {
+                video {}
+            }
+
+        }
+    }
+}
+
+// `md` applies to small devices (landscape phones, less than 768px)
+@media (max-width: 768px) {
+    .content_area {
+
+        .contents_top_row {
+            padding: 0;
+
+            .contents_top_clm {
+                flex-direction: column;
+                width: 100%;
+                grid-template-columns: repeat(1, auto);
+
+                .content_left_clm {
+
+                    .top_row {
+                        padding: 3px;
+
+                        .top_row_clm {
+
+                            img {}
+                        }
+                    }
+
+                    .middle_row {
+                        .middle_row_clm {
+                            p {
+                                font-size: calc(6px + 1vh);
+                            }
+
+                            .notice_board_ul {
+
+                                a {
+                                    font-size: calc(6px + 1vh);
+                                }
+                            }
+
+
+                            #submit {
+                                font-size: calc(6px + 1vh);
+                            }
+                        }
+                    }
+
+                    .bottom_row {
+                        .bottom_row_clm {
+                            .card_row {
+                                grid-template-columns: repeat(1, auto);
+
+                                .single_card_clm {
+                                    width: 100%;
+                                    display: flex;
+                                    height: 15rem;
+                                    flex-direction: column;
+
+                                    &:hover {
+                                        transform: scale(1.02);
+                                    }
+
+                                    h4 {
+                                        font-size: calc(6px + 1vh) !important;
+                                    }
+
+                                    .card_info {
+                                        display: flex;
+                                        flex-direction: row;
+                                        height: 100%;
+                                        justify-content: left;
+                                        align-items: center;
+
+                                        img {}
+
+                                        ul {
+                                            margin-left: 1rem;
+
+                                            li {
+
+                                                .i {}
+
+                                                a {
+                                                    font-size: calc(6px + 1vh);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .bottom_row_video_area {
+                        .contents_bottom_clm {
+                            video {}
+                        }
+                    }
+                }
+
+                .content_right_clm {
+                    padding-top: 25px;
+
+                    .ministers {
+                        grid-template-columns: repeat(2, 1fr);
+
+                        .single_mnstr {
+                            height: 18rem;
+                            width: 100%;
+
+                            h3 {
+                                font-size: calc(6px + 1vh);
+                            }
+
+                            img {
+                                width: 45%;
+                            }
+
+                            a {
+                                font-size: calc(6px + 1vh);
+                            }
+                        }
+
+                        .emergancy_service {
+                            height: 30rem !important;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .contents_bottom_row {
+            .contents_bottom_clm {
+                video {}
+            }
+
+        }
+    }
+}
+
+// `sm` applies to x-small devices (portrait phones, less than 576px)
+@media (max-width: 576px) {
+    .content_area {
+
+        .contents_top_row {
+
+            .contents_top_clm {
+                flex-direction: column;
+                width: 100%;
+                grid-template-columns: repeat(1, auto);
+
+                .content_left_clm {
+
+                    .top_row {
+                        .top_row_clm {
+                            img {}
+                        }
+                    }
+
+                    .middle_row {
+                        .middle_row_clm {
+                            p {
+                                font-size: calc(6px + 1vh);
+                            }
+
+
+                            .notice_board_ul {
+
+                                a {
+                                    font-size: calc(6px + 1vh);
+                                }
+                            }
+
+
+                            #submit {
+                                font-size: calc(6px + 1vh);
+                            }
+                        }
+                    }
+
+                    .bottom_row {
+                        .bottom_row_clm {
+                            .card_row {
+                                grid-template-columns: repeat(1, auto);
+
+                                .single_card_clm {
+                                    width: 100%;
+                                    display: flex;
+                                    height: auto;
+                                    flex-direction: column;
+
+                                    &:hover {
+                                        transform: scale(1.02);
+                                    }
+
+                                    h4 {
+                                        font-size: calc(6px + 1vh) !important;
+                                    }
+
+                                    .card_info {
+                                        display: flex;
+                                        flex-direction: column;
+                                        height: 100%;
+                                        justify-content: left;
+                                        align-items: center;
+                                        padding-bottom: 10px;
+
+                                        img {}
+
+                                        ul {
+                                            margin-left: 2px;
+                                            width: 100%;
+
+                                            li {
+                                                .i {}
+
+                                                a {
+                                                    font-size: calc(6px + 1vh);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .bottom_row_video_area {
+                        .contents_bottom_clm {
+                            video {}
+                        }
+                    }
+                }
+
+                .content_right_clm {
+                    padding-top: 25px;
+
+                    .ministers {
+                        grid-template-columns: repeat(1, 1fr);
+
+                        .single_mnstr {
+                            height: 18rem;
+                            width: 100%;
+
+                            h3 {
+                                font-size: calc(6px + 1vh);
+                            }
+
+                            img {
+                                width: 30%;
+                            }
+
+                            a {
+                                font-size: calc(6px + 1vh);
+                            }
+                        }
+
+                        .emergancy_service {
+                            height: 100%;
+
+                            img {
+                                width: auto;
+                                height: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .contents_bottom_row {
+            .contents_bottom_clm {
+                video {}
+            }
+
+        }
+    }
+}
+
+// `sm` applies to x-small devices ( less than 320px)
+@media (max-width: 320px) {
+    .content_area {
+
+        .contents_top_row {
+
+            .contents_top_clm {
+
+                .content_left_clm {
+
+                    .top_row {
+                        .top_row_clm {
+                            img {}
+                        }
+                    }
+
+                    .middle_row {
+                        .middle_row_clm {
+                            p {
+                                font-size: calc(6px + 1vh);
+                            }
+
+                            img {}
+
+                            .notice_board_ul {
+
+                                a {
+                                    font-size: calc(6px + 1vh);
+                                }
+                            }
+
+
+                            #submit {
+                                font-size: calc(6px + 1vh);
+                            }
+                        }
+                    }
+
+                    .bottom_row {
+                        .bottom_row_clm {
+                            .card_row {
+
+
+                                .single_card_clm {
+
+
+                                    &:hover {}
+
+                                    h4 {
+                                        font-size: calc(6px + 1vh) !important;
+                                    }
+
+                                    .card_info {
+
+
+                                        img {}
+
+                                        ul {
+                                            margin-left: 2px;
+                                            width: 100%;
+
+                                            li {
+                                                .i {}
+
+                                                a {
+                                                    font-size: calc(6px + 1vh);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .bottom_row_video_area {
+                        .contents_bottom_clm {
+                            video {}
+                        }
+                    }
+                }
+
+                .content_right_clm {
+
+                    .ministers {
+
+                        .single_mnstr {
+
+                            h3 {
+                                font-size: calc(6px + 1vh);
+                            }
+
+                            img {}
+
+                            a {
+                                font-size: calc(6px + 1vh);
+                            }
+                        }
+
+                        .emergancy_service {
+                            height: 100%;
+
+                            img {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .contents_bottom_row {
+            .contents_bottom_clm {
+                video {}
+            }
+
+        }
+    }
+}

@@ -1,0 +1,134 @@
+.footer_area {
+    .footer_top_row {
+        background-color: white;
+        padding-top: 1rem;
+
+        .footer_top_clm {
+            .img {
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .footer_bottom_row {
+        background-color: #198754;
+        color: white;
+
+        .footer_bottom_clm {
+            padding: 1rem 0;
+            display: flex;
+            justify-content: center;
+
+            p {
+                font-size: 1rem;
+                text-transform: capitalize;
+
+                a {
+                    color: var(--green-800);
+                }
+            }
+        }
+    }
+}
+
+/*----------responsive_area----------------*/
+// `xxl` applies to x-large devices (large desktops, less than 1400px)
+@media (min-width: 1400px) {
+    .footer_area {
+        .footer_top_row {
+            .footer_top_clm {
+                .img {
+                    img {}
+                }
+            }
+        }
+
+        .footer_bottom_row {
+            .footer_bottom_clm {
+                p {
+                    a {}
+                }
+            }
+        }
+    }
+}
+
+// `xxl` applies to x-large devices (large desktops, less than 1399px)
+@media (max-width: 1399px) {}
+
+// `xl` applies to large devices (desktops, less than 1200px)
+@media (max-width: 1200px) {}
+
+// `xl` applies to large devices (desktops, less than 1024px)
+@media (max-width: 1024px) {
+    .footer_area {
+        .footer_top_row {
+            .footer_top_clm {
+                .img {
+                    img {}
+                }
+            }
+        }
+
+        .footer_bottom_row {
+            .footer_bottom_clm {
+                p {
+                    font-size: calc(5px + 1vh);
+
+                    a {}
+                }
+            }
+        }
+    }
+}
+
+// `lg` applies to medium devices (tablets, less than 992px)
+@media (max-width: 992px) {}
+
+// `md` applies to small devices (landscape phones, less than 768px)
+@media (max-width: 768px) {}
+
+// `sm` applies to x-small devices (portrait phones, less than 576px)
+@media (max-width: 576px) {
+    .footer_area {
+        .footer_top_row {
+            .footer_top_clm {
+                .img {
+                    img {}
+                }
+            }
+        }
+
+        .footer_bottom_row {
+            .footer_bottom_clm {
+                p {
+
+                    a {}
+                }
+            }
+        }
+    }
+}
+
+// `sm` applies to x-small devices ( less than 320px)
+@media (max-width: 320px) {
+    .footer_area {
+        .footer_top_row {
+            .footer_top_clm {
+                .img {
+                    img {}
+                }
+            }
+        }
+
+        .footer_bottom_row {
+            .footer_bottom_clm {
+                p {
+                    a {}
+                }
+            }
+        }
+    }
+}
